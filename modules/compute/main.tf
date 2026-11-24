@@ -21,6 +21,7 @@ resource "aws_instance" "web" {
   instance_type               = var.vm_specification["web"].instance_type
   subnet_id                   = aws_subnet.subnet-1.id
   associate_public_ip_address = true
+  vpc_security_group_ids      = [aws_security_group.ssh-access.id]
 
   key_name = aws_key_pair.ssh-key.key_name
 
