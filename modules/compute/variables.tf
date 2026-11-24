@@ -39,4 +39,8 @@ variable "ssh-public-key" {
 variable "environment" {
   description = "Environment type"
   type        = string
+  validation {
+    condition     = contains(["dev", "prod"])
+    error_message = "Choose 'dev' or 'prod' environment"
+  }
 }

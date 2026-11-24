@@ -26,4 +26,8 @@ variable "extra_disk_size" {
 variable "environment" {
   description = "Environment type"
   type        = string
+  validation {
+    condition     = contains(["dev", "prod"])
+    error_message = "Choose 'dev' or 'prod' environment"
+  }
 }
