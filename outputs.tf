@@ -9,3 +9,10 @@ output "external-ips" {
 output "disks" {
   value = module.disks.disk_ids
 }
+
+output "ansible_inventory" {
+  value = <<EOT
+[servers]
+${var.environment}-server ansible_host=${module.compute.external_ips.api}
+  EOT
+}

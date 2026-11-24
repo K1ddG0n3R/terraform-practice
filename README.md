@@ -106,10 +106,12 @@ terraform plan -var-file=terraform.tfvars.prod
 terraform apply -var-file=terraform.tfvars.prod
 ```
 ___
-## 🧹 Cleanup
+## Dynamic Ansible Inventory Creation
 
-To destroy all created resources:
+To dynamicly change Ansible creation:
 
 ```
-terraform destroy
+terraform output -raw ansible_inventory > path/to/inventory
 ```
+
+
