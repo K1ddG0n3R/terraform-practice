@@ -5,6 +5,13 @@ output "private_ips" {
   }
 }
 
+output "external_ips" {
+  value = {
+    api = aws_instance.api.public_ip
+    web = aws_instance.web.public_ip
+  }
+}
+
 output "instance_ids" {
   value = {
     api_instance_id = aws_instance.api.id
