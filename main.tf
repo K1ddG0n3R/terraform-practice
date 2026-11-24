@@ -35,8 +35,8 @@ module "compute" {
   source = "./modules/compute"
 
   environment      = var.environment
-  ssh-public-key   = var.ssh-public-key
-  vm-specification = var.vm-specification
+  ssh_public_key   = var.ssh_public_key
+  vm_specification = var.vm_specification
 }
 
 resource "aws_volume_attachment" "attach-extra-disks" {
